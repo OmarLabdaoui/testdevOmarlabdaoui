@@ -1,7 +1,122 @@
 .App {
   text-align: center;
 }
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
+h1 {
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+.form {
+  background: #0e101c;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  background-color: lightgray;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+button[type="submit"],
+input[type="submit"] {
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+.error {
+  color: red;
+}
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: #bf1650;
+}
+
+button[type="submit"]:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+input:disabled {
+  opacity: 0.4;
+}
+
+input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+button[type="submit"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+button[type="button"] {
+  display: block;
+  appearance: none;
+  background: #333;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+hr {
+  margin-top: 30px;
+}
+
+button {
+  display: block;
+  appearance: none;
+  margin-top: 40px;
+  border: 1px solid #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +150,276 @@
   to {
     transform: rotate(360deg);
   }
+}
+@keyframes down-btn {
+  0% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 0px;
+  }
+
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opaicty: 1;
+  }
+}
+
+@-webkit-keyframes down-btn {
+  0% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 0px;
+  }
+
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opaicty: 1;
+  }
+}
+
+@-moz-keyframes down-btn {
+  0% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 0px;
+  }
+
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opaicty: 1;
+  }
+}
+
+@-o-keyframes down-btn {
+  0% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 0px;
+  }
+
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opaicty: 1;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.category-name {
+  font-family: sans-serif;
+  width: -webkit-fill-available;
+  text-align: center;
+  font-size: 40px;
+}
+
+.card-category-2 ul,
+.card-category-3 ul,
+.card-category-4 ul,
+.card-category-5 ul .card-category-6 ul {
+  padding: 0;
+}
+
+.card-category-2 ul li,
+.card-category-3 ul li,
+.card-category-4 ul li,
+.card-category-5 ul li,
+.card-category-6 ul li {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.card-category-2 ul li,
+.card-category-3 ul li {
+  margin: 10px 5px;
+}
+
+.card-category-1,
+.card-category-2,
+.card-category-3,
+.card-category-4,
+.card-category-5,
+.card-category-6 {
+  font-family: sans-serif;
+  margin-bottom: 45px;
+  text-align: center;
+}
+.card-category-1 div,
+.card-category-2 div {
+  display: inline-block;
+}
+
+.card-category-1 > div,
+.card-category-2 > div:not(:last-child) {
+  margin: 10px 5px;
+  text-align: left;
+}
+
+/* Basic Card */
+.basic-card {
+  width: 300px;
+  position: relative;
+
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.basic-card .card-content {
+  padding: 30px;
+}
+
+.basic-card .card-title {
+  font-size: 25px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.basic-card .card-text {
+  line-height: 1.6;
+}
+
+.basic-card .card-link {
+  padding: 25px;
+  width: -webkit-fill-available;
+}
+
+.basic-card .card-link a {
+  text-decoration: none;
+  position: relative;
+  padding: 10px 0px;
+}
+
+.basic-card .card-link a:after {
+  top: 30px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  width: 0;
+
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.basic-card .card-link a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.basic-card-aqua {
+  background-image: linear-gradient(to bottom right, #00bfad, #99a3d4);
+}
+
+.basic-card-aqua .card-content,
+.basic-card .card-link a {
+  color: #fff;
+}
+
+.basic-card-aqua .card-link {
+  border-top: 1px solid #82c1bb;
+}
+
+.basic-card-aqua .card-link a:after {
+  background: #fff;
+}
+
+.card-category-1 {
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.navbar {
+  background-color: #00bfad;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+}
+
+/* CSS */
+.logout {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: bold;
+  left: 0;
+}
+
+.logout:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.logout:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }

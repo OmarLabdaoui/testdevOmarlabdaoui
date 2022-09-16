@@ -28,31 +28,33 @@ function Posts() {
         </div>
     )
     return (
-        <div>{loading ?
-            <div>
-                <p style={{ fontSize: "70px" }}>Loading ......</p>
-            </div>
-            :
-            <div className='grid-container'>
-                {posts?.map(post => (
-                    <div className="card-category-1" key={post.id}>
+        <div>
+            <h1 style={{ color: "black" }}>Posts:</h1>
+            {loading ?
+                <div>
+                    <p style={{ fontSize: "70px" }}>Loading ......</p>
+                </div>
+                :
+                <div className='grid-container'>
+                    {posts?.map(post => (
+                        <div className="card-category-1" key={post.id}>
 
-                        <div className="basic-card basic-card-aqua">
-                            <div className="card-content">
-                                <span className="card-title">{post.title}</span>
-                                <p className="card-text">
-                                    {post.body}
-                                </p>
+                            <div className="basic-card basic-card-aqua">
+                                <div className="card-content">
+                                    <span className="card-title">{post.title}</span>
+                                    <p className="card-text">
+                                        {post.body}
+                                    </p>
+                                </div>
+
+
                             </div>
-
-
                         </div>
-                    </div>
 
-                ))}
+                    ))}
 
-            </div>
-        }</div>
+                </div>
+            }</div>
     )
 }
 

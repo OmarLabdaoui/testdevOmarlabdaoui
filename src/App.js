@@ -7,6 +7,7 @@ import {
 import './App.css';
 import Login from './components/auth/Login';
 import Home from './components/Home';
+
 import Navbar from './components/Navbar';
 import Notfound from './components/Notfound';
 import Posts from './components/Posts';
@@ -16,27 +17,33 @@ function App() {
 
   const [user, setUser] = useState(true)
 
-  const { firstName } = useContext(LoginContext)
+  const [firstName, setFirstName] = useState()
+  useEffect(() => {
+    const firstname = JSON.parse(localStorage.getItem('firstName'));
+    if (firstname) {
+      setFirstName(firstname);
+    }
+  }, []);
   return (
     <div >
       <BrowserRouter>
+        <LoginContext.Provider value={{ firstName, setFirstName }} >
+          <Navbar />
+          <>
 
-
-        <>
-          <Routes>
-            {firstName &&
-              <>
+            <Routes>
+              {firstName &&
                 <Route path="/posts" element={<Posts />}></Route>
-                <Route path="/login" element={<Login />}></Route>
-              </>
-            }
-            <Route path="*" exact element={<Notfound />} />
+              }
+              <Route path="*" exact element={<Notfound />} />
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/" element={<Home />}></Route>
+            </Routes>
 
-            <Route path="/" element={<Home />}></Route>
-
-          </Routes>
-        </>
+          </>
+        </LoginContext.Provider>
       </BrowserRouter>
+
     </div >
   );
 }

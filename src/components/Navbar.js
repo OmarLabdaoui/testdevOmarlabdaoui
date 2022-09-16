@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import { LoginContext } from '../context/LoginContext'
 
 function Navbar() {
@@ -9,20 +9,38 @@ function Navbar() {
     const logout = () => {
         localStorage.removeItem("firstName")
         setFirstName("")
-        navigate("/")
+        navigate("/login")
 
     }
     return (
         <div className='navbar'>
-            {firstName ?
-                <button className='logout' onClick={() => logout()}>Logout</button>
-                :
-                <div>
+            <div className='header'>
+                <div className='header__left'>
                     Navbar
                 </div>
-            }
+                <div className='header__right'>
+                    <p><NavLink to="/" className={({ isActive }) =>
+                        isActive ? "link-active" : "link-inactive"
+                    }>Home</NavLink></p>
+                    {firstName ?
+                        <div style={{ display: "flex" }}>
+                            <p ><NavLink to="/posts" className={({ isActive }) =>
+                                isActive ? "link-active" : "link-inactive"
+                            }>Posts</NavLink></p>
+                            <p onClick={() => logout()} style={{ marginLeft: "10Px" }}>logout</p>
+                        </div>
 
-        </div>
+                        :
+                        <p ><NavLink to="/login" className={({ isActive }) =>
+                            isActive ? "link-active" : "link-inactive"
+                        }>Login</NavLink></p>
+                    }
+
+                </div>
+            </div>
+
+
+        </div >
     )
 }
 

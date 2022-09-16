@@ -19,13 +19,14 @@ function Login() {
         console.log(JSON.stringify(data));
         setFirstName(data.firstName)
         localStorage.setItem('firstName', JSON.stringify(data.firstName))
+        navigate("/posts")
 
     };
     return (
         <div>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label>First Name</label>
+                <label style={{ color: "black" }}>First Name</label>
                 <input
                     {...register(`firstName`, {
                         required: true,
@@ -40,21 +41,19 @@ function Login() {
                 {errors?.firstName?.type === "pattern" && (
                     <p className='error'>Alphabetical characters only</p>
                 )}
-                <label>Laste Name</label>
-                <input {...register("lastName", {
+                <label style={{ color: "black" }}>Password</label>
+                <input type="password" {...register("password", {
                     required: true, maxLength: 20,
-                    pattern: /^[A-Za-z]+$/i
+
                 })} />
-                {errors.lastName && <p className='error'>Last name is required</p>}
-                {errors?.lastName?.type === "maxLength" && (
+                {errors.password && <p className='error'>Last name is required</p>}
+                {errors?.password?.type === "maxLength" && (
                     <p className='error' >last name cannot exceed 20 characters</p>
                 )}
-                {errors?.lastName?.type === "pattern" && (
-                    <p className='error'>Alphabetical characters only</p>
-                )}
+
                 <input type="submit" value='login' />
             </form>
-
+            {firstName}
         </div>
     )
 }

@@ -1,18 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { LoginContext } from '../context/LoginContext';
-import Login from './auth/Login';
-
-import Navbar from './Navbar';
-import Posts from './Posts';
-
+import React from 'react'
 function Home() {
-    const [firstName, setFirstName] = useState()
-    useEffect(() => {
-        const firstname = JSON.parse(localStorage.getItem('firstName'));
-        if (firstname) {
-            setFirstName(firstname);
-        }
-    }, []);
     return (
         <div>
             Home
